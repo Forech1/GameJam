@@ -7,11 +7,11 @@ public class Kotodama_KadaiMnager : MonoBehaviour
     [SerializeField] Kotodama_SpSeetTest databace;
     string fripKadai;
     string inputkadai;
-    [SerializeField] TextMeshPro fripper_F;
-    [SerializeField] List<TextMeshPro> fripper_I;
+    [SerializeField] TextMeshProUGUI fripper_F;
+    [SerializeField] List<TextMeshProUGUI> fripper_I;
     int nowChar = 0;
 
-    [SerializeField] Text_kotodama_Input_Test inputer;
+    [SerializeField] Kotodama_Input inputer;
 
     private void OnEnable()
     {
@@ -24,6 +24,7 @@ public class Kotodama_KadaiMnager : MonoBehaviour
 
     private void Start()
     {
+        inputer.TextSetFrip(Color.black);
         databace.SetUp();
         ResetKadai(databace.GetByRandom());
     }
@@ -37,13 +38,7 @@ public class Kotodama_KadaiMnager : MonoBehaviour
         foreach (var t in fripper_I)
             t.text = inputkadai;
 
-        inputer.inputText = new string(' ', inputkadai.Length);
-
-
-        for (int i = 0; i < inputkadai.Length; i++)
-        {
-            inputer.inputText += $"<color=#00000000>{inputkadai[i]}</color>";
-        }
+        updateText();
 
     }
 

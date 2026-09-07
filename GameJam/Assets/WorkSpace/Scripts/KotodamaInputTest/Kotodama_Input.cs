@@ -6,11 +6,11 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
 
-public class Text_kotodama_Input_Test : MonoBehaviour
+public class Kotodama_Input : MonoBehaviour
 {
     public string inputText { get; set; } = "";
 
-    [SerializeField] TextMeshPro fripper_I_K;
+    [SerializeField] TextMeshProUGUI fripper_I_K;
 
     public Action<char> IsInput {  get; set; }
 
@@ -37,7 +37,7 @@ public class Text_kotodama_Input_Test : MonoBehaviour
         // Debug.Log("åªç›ÇÃì¸óÕÅF" + inputText);
     }
 
-    void TextSetFrip(Color fontcolor)
+    public void TextSetFrip(Color fontcolor)
     {
         fripper_I_K.text = inputText;
 

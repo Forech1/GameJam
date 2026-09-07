@@ -11,7 +11,7 @@ public class Text_kotodama_Kadai_Test : MonoBehaviour
     [SerializeField] List<TextMeshPro> fripper_I;
     int nowChar = 0;
 
-    [SerializeField] Text_kotodama_Input_Test inputer;
+    [SerializeField] Kotodama_Input inputer;
 
     private void OnEnable()
     {
