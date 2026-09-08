@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kari: 50
   cameraObject: {fileID: 330585543}
   CutInObject: {fileID: 4710124275684054132, guid: 5c429a6c3163d5e4583ec536a5d4034c, type: 3}
   gameManager: {fileID: 1983669854}
@@ -188,6 +187,9 @@ MonoBehaviour:
   intervalMin: 1
   intervalMax: 3
   waitTime: 4
+  Speaking: 1
+  damage: 1
+  muteStudent: 0
 --- !u!82 &23292677
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2574,6 +2576,10 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 23292677}
+    - target: {fileID: 9074373512392249146, guid: 10e9e45a896877340ab9d07b1b34ed5d, type: 3}
+      propertyPath: upDown
+      value: 
+      objectReference: {fileID: 23292676}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
