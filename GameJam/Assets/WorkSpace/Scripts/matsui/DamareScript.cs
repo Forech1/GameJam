@@ -11,6 +11,7 @@ public class DamareScript : MonoBehaviour
     int count = 0;
     bool isStudent = true;
     public gameManager gameManager;
+    public StudentUpDownScript upDown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +37,7 @@ public class DamareScript : MonoBehaviour
             count++;
             Instantiate(CutInObject, new Vector3(0, 12.5f, 10.5f), Quaternion.Euler(25, 0, 0));
             gameManager.Add();
+            upDown.Mute();
         }
     }
 }
