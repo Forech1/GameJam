@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StudentUpDownScript : MonoBehaviour
@@ -11,12 +12,17 @@ public class StudentUpDownScript : MonoBehaviour
     [SerializeField] float intervalMax = 3.0f;
     [SerializeField] float waitTime = 4f;
     AudioSource sound;
-    bool Speaking = true;
+    public bool Speaking = true;
+    float count = 0;
+    public float damage = 1;
+    float startVolume = 0;
+    public float muteStudent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sound = GetComponent<AudioSource>();
         interval = Random.Range(intervalMin, intervalMax);
+        sound.volume = startVolume;
     }
 
     // Update is called once per frame
@@ -63,12 +69,18 @@ public class StudentUpDownScript : MonoBehaviour
     public void Mute()
     {
         Speaking = false;
-        sound.volume = 0;
+        muteStudent = sound.volume * damage;
+        startVolume = sound.volume - muteStudent;
+        damage = damage - (0.04f + (2 * count) / 100);
+        count++;
+        sound.volume = 0; 
+       // Debug.Log(damage);
         StartCoroutine(Wait());
     }
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(waitTime);
         Speaking = true;
+        sound.volume = startVolume;
     }
 }
