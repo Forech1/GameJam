@@ -7,6 +7,7 @@ public class gameManager : MonoBehaviour
     public int NumPeople {  get; set; }
     [SerializeField]int kiso = 10;
     [SerializeField] AudioSource sound;
+    public StudentUpDownScript upDown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +21,8 @@ public class gameManager : MonoBehaviour
     }
     public void Add()
     {
-        Score += kiso * (int)(sound.volume * 100 / 20);
+       // Debug.Log(upDown.muteStudent);
+        Score += kiso * (int)(upDown.muteStudent * 100 / 20);
         Debug.Log(Score);
     }
 }
