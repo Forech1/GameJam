@@ -8,5 +8,6 @@ public class Test_audio : MonoBehaviour
     {
 
         AudioSystems.instance.PlaySoundBGM(clip);
+        AudioSystems.instance.SetSoundVolBGM(0.2f);
     }
 }

@@ -10,6 +10,8 @@ public class DamareScript : MonoBehaviour
     [SerializeField] GameObject CutInObject;
     int count = 0;
     bool isStudent = true;
+    public gameManager gameManager;
+    public StudentUpDownScript upDown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,8 +23,8 @@ public class DamareScript : MonoBehaviour
     {
         if (isStudent && Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            isStudent = false;
-            cameraObject.transform.Rotate(50, 180, 0);
+            //isStudent = false;
+            //cameraObject.transform.Rotate(50, 180, 0);
             if(kari - damage > 0)
             {
                 kari = kari - damage;
@@ -34,6 +36,8 @@ public class DamareScript : MonoBehaviour
             }
             count++;
             Instantiate(CutInObject, new Vector3(0, 12.5f, 10.5f), Quaternion.Euler(25, 0, 0));
+            gameManager.Add();
+            upDown.Mute();
         }
     }
 }

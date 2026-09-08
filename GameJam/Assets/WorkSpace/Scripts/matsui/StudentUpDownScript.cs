@@ -9,7 +9,9 @@ public class StudentUpDownScript : MonoBehaviour
     float interval;
     [SerializeField] float intervalMin = 1.0f;
     [SerializeField] float intervalMax = 3.0f;
+    [SerializeField] float waitTime = 4f;
     AudioSource sound;
+    bool Speaking = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +23,7 @@ public class StudentUpDownScript : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= interval)
+        if(time >= interval && Speaking)
         {
             int rndStu = Random.Range(0, 100);
             if (rndStu >= Down)
@@ -57,5 +59,16 @@ public class StudentUpDownScript : MonoBehaviour
             time = 0;
             interval = Random.Range(intervalMin, intervalMax);
         }
+    }
+    public void Mute()
+    {
+        Speaking = false;
+        sound.volume = 0;
+        StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(waitTime);
+        Speaking = true;
     }
 }
