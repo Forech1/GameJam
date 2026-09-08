@@ -11,7 +11,7 @@ public class Kotodama_Input : MonoBehaviour
     public string inputText { get; set; } = "";
 
     [SerializeField] TextMeshProUGUI fripper_I_K;
-
+    [SerializeField] StudentUpDownScript ddd;
     public Action<char> IsInput {  get; set; }
 
     private void Start()
@@ -31,6 +31,9 @@ public class Kotodama_Input : MonoBehaviour
 
     private void OnTextInput(char character)
     {
+        if (ddd.aaa == true)
+            return;
+
         IsInput?.Invoke(character);
         TextSetFrip(Color.black);
 

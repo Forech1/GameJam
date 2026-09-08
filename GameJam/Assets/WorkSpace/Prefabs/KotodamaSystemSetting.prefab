@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7244221092391221674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5041775527529860699}
+  - component: {fileID: 1882602094296457702}
+  - component: {fileID: 2422523515948057651}
+  - component: {fileID: 7269089356601974378}
+  m_Layer: 0
+  m_Name: KotodamaSystemSetting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5041775527529860699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244221092391221674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882602094296457702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244221092391221674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ca55cf0caab8740aeb8014ae63e7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fripper_I_K: {fileID: 0}
+--- !u!114 &2422523515948057651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244221092391221674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68174a3d7860f241ad3b43c16fef9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  databace: {fileID: 11400000, guid: dec60187a548c3b45b83a9e4953b7893, type: 2}
+  fripper_F: {fileID: 0}
+  fripper_I:
+  - {fileID: 0}
+  - {fileID: 0}
+  inputer: {fileID: 1882602094296457702}
+  returner: {fileID: 7269089356601974378}
+--- !u!114 &7269089356601974378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244221092391221674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e907ed9e72251a74ca332a7a1ca0accf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bord: {fileID: 0}
+  breakLine: 19
+  limit: 10

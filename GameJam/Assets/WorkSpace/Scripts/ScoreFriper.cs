@@ -4,11 +4,11 @@ using UnityEngine;
 public class ScoreFriper : MonoBehaviour
 {
     TextMeshProUGUI textMeshProUGUI;
-    gameManager gameMnager_;
+    [SerializeField]gameManager gameMnager_;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameMnager_ = FindAnyObjectByType<gameManager>();
+        
         textMeshProUGUI = GetComponent<TextMeshProUGUI>();
     }
 

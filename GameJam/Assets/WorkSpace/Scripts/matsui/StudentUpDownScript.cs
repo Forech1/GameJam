@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +18,10 @@ public class StudentUpDownScript : MonoBehaviour
     public float damage = 1;
     float startVolume = 0;
     public float muteStudent;
+
+    public bool aaa { get; set; }=false;
+
+    [SerializeField] Transform cameraPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -80,7 +85,11 @@ public class StudentUpDownScript : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(waitTime);
+
+        cameraPos.DORotate(new Vector3(0, 0, 0), 1f);
         Speaking = true;
         sound.volume = startVolume;
+
+        aaa = false;
     }
 }
