@@ -12,6 +12,9 @@ public class AudioSystems : MonoBehaviour
     [SerializeField] AudioSource BgmSource;
     [SerializeField] List<AudioSource> SeSource = new List<AudioSource>();
 
+    public int ResultScore { get; set; }
+        public int ResultPeple { get; set; }
+
     private void Awake()
     {
         if (instance != null && instance != this)
