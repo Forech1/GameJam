@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kotodama_KadaiMnager : MonoBehaviour
 {
-    [SerializeField] Kotodama_SpSeetTest databace;
+    [SerializeField]public Kotodama_SpSeetTest databace;
     string fripKadai;
     string inputkadai;
     [SerializeField] TextMeshProUGUI fripper_F;
@@ -12,6 +12,7 @@ public class Kotodama_KadaiMnager : MonoBehaviour
     int nowChar = 0;
 
     [SerializeField] Kotodama_Input inputer;
+    [SerializeField] Kotodama_Return returner;
 
     private void OnEnable()
     {
@@ -56,6 +57,12 @@ public class Kotodama_KadaiMnager : MonoBehaviour
             //クリアした場合再セット
             if(nowChar>= inputkadai.Length)
             {
+                //クリア処理
+
+
+                //ボードに追加 (空欄を開けるため半角スペース加えます)
+                returner.LineBreak(' '+fripKadai);
+
                 nowChar = 0;
                 ResetKadai(databace.GetByRandom());
             }
